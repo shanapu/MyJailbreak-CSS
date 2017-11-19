@@ -1,0 +1,16 @@
+// Exported from SourceMod Translator
+// Date: 2017-04-20 21:44:27 UTC
+// Language: Danish (da)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/180
+//
+"Phrases"
+{
+
+	"menu_disabled"
+	{
+		"da"		"Event voting runde er midlertidigt {purple}slÃ¥et fra."
+	}
+
+}

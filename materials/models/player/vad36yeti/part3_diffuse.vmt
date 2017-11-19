@@ -1,0 +1,8 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models\player\vad36yeti/part3_diffuse"
+	"$bumpmap" "models\player\vad36yeti/part3_bump"
+
+	"$nocull" 1
+	"$alphatest" 1
+}

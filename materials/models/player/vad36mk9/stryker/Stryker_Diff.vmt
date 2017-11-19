@@ -1,0 +1,31 @@
+"vertexlitGeneric"
+{
+"$basetexture" "models\player\vad36mk9\stryker/Stryker_Diff"
+"$bumpmap" "models\player\vad36mk9\stryker/Stryker_Norm"
+"$phongexponenttexture" "models\player\vad36mk9\stryker/Stryker_Spec"
+"$phongexponent" "5"
+"$phongalbedotint" 1
+
+"$phong" "1" 
+"$phongboost" "0.3" 
+"$phongfresnelranges"	"[.2 .2 .2]"
+"$phongexponent" "1"
+
+"$color2" "[.9 .9 .9]"
+"$detail" "models\player\vad36mk9\stryker/Stryker_ao"
+ $detailscale "1"	
+$detailblendmode 0
+$detailblendfactor .4
+
+"$halflambert" 1
+$model 1
+$AmbientOcclusion 1
+"$AmbientOcclTexture" "models\player\vad36mk9\stryker/Stryker_ao"
+"$ambientocclusiontexture" "models\player\vad36mk9\stryker/Stryker_ao"
+
+"$rimlight" "1" 
+"$rimlightexponent" "2" 
+"$rimlightboost" "0.3" 
+"$rimmask" 1
+
+}

@@ -1,0 +1,16 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" 		"models/stalkmili/act_specnaz_glass"
+	"$bumpmap" "models/stalkmili/act_specnaz_glass_bump"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" "1"
+	"$envmaptint" "[ .15 .15 .15 ]"
+	"$envmapconstrast" "1"
+	"$model" "1"
+	"$phong" "1"
+	"$phongboost" "3"	
+	"$phongfresnelranges"	"[3 5 8]"
+	"$phongexponent"	"50"
+	"$phongalbedotint" "1"
+							// Boost for ambient cube component of rim lighting
+}

@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+$basetexture "models\player\vad36mk9\stryker/eyeball_r"
+$Iris "models\player\vad36mk9\stryker/eye" 
+}

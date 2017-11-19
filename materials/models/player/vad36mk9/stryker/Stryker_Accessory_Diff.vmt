@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+"$basetexture" "models\player\vad36mk9\stryker/Stryker_Accessory_Diff"
+"$bumpmap" "models\player\vad36mk9\stryker/Stryker_Accessory_Norm"
+"$phongexponenttexture" "models\player\vad36mk9\stryker/Stryker_Accessory_Spec"
+"$phongexponent" "33"
+"$phongalbedotint" 1
+
+ "$phong" "1"
+"$phongexponent" "3"
+"$phongboost"	"0.3"
+"$phongfresnelranges"	"[.15 .5 1]"
+
+"$rimlight" "1" 
+"$rimlightexponent" "2" 
+"$rimlightboost" "0.3" 
+"$rimmask" 1
+}

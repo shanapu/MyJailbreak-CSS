@@ -1,0 +1,91 @@
+// Exported from SourceMod Translator
+// Date: 2017-05-17 21:17:05 UTC
+// Language: Spanish (es)
+// 
+// To view other translations for this plugin, please visit:
+// http://translator.mitchdempsey.com/sourcemod_plugins/178
+//
+"Phrases"
+{
+
+	"warden_new"
+	{
+		"es"		"{purple}{1}{default} Es ahora el Capitán de esta Prision."
+	}
+
+	"warden_new_nc"
+	{
+		"es"		"{1} Es ahora el Capitán de esta Prision."
+	}
+
+	"warden_playerdead"
+	{
+		"es"		"Solo los {purple}jugadores vivos{default}, pueden ser el Capitán."
+	}
+
+	"warden_ctsonly"
+	{
+		"es"		"Solo los {purple}Anti-Terroristas{default} pueden ser el Capitán."
+	}
+
+	"warden_exist"
+	{
+		"es"		"Capitán Actual: {purple}{1}{default}"
+	}
+
+	"warden_retire"
+	{
+		"es"		"{purple}{1}{default} ha decidido jubilarse. Ahora toca elegir uno nuevo."
+	}
+
+	"warden_retire_nc"
+	{
+		"es"		"{1} ha decidido jubilarse. Ahora toca elegir uno nuevo."
+	}
+
+	"warden_dead"
+	{
+		"es"		"El Capitán ha {darkred}muerto{default}! Ahora toca elegir uno nuevo."
+	}
+
+	"warden_dead_nc"
+	{
+		"es"		"El Capitán ha muerto! Ahora toca elegir uno nuevo."
+	}
+
+	"warden_disconnected"
+	{
+		"es"		"El Capitán ha desertado. Ahora toca elegir uno nuevo."
+	}
+
+	"warden_disconnected_nc"
+	{
+		"es"		"El Capitán ha desertado. Ahora toca elegir uno nuevo."
+	}
+
+	"warden_removed"
+	{
+		"es"		"Administrador: {purple}{1}{default} ha jubilado al Capitán: {purple}{2}"
+	}
+
+	"warden_removed_nc"
+	{
+		"es"		"Administrador: {1} ha prejubilado al Capitán: {2}"
+	}
+
+	"warden_15"
+	{
+		"es"		"15 segundos"
+	}
+
+	"warden_120"
+	{
+		"es"		"2 Minutos"
+	}
+
+	"warden_180"
+	{
+		"es"		"3 Minutos"
+	}
+
+}
