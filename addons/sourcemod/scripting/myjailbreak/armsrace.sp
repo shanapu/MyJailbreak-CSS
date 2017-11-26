@@ -779,7 +779,7 @@ void PrepareDay(bool thisround)
 		}
 		else
 		{
-			GivePlayerItem(i, "weapon_knife_t");
+			GivePlayerItem(i, "weapon_knife");
 		}
 
 		GetArrayString(g_aWeapons, g_iLevel[i], buffer, sizeof(buffer));
@@ -1019,7 +1019,7 @@ public void Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast
 				}
 				else
 				{
-					GivePlayerItem(attacker, "weapon_knife_t");
+					GivePlayerItem(attacker, "weapon_knife");
 				}
 			}
 			
@@ -1057,7 +1057,7 @@ public Action Timer_Respawn(Handle timer, int userid)
 		}
 		else
 		{
-			GivePlayerItem(client, "weapon_knife_t");
+			GivePlayerItem(client, "weapon_knife");
 		}
 	}
 
@@ -1089,7 +1089,7 @@ public Action OnWeaponCanUse(int client, int weapon)
 	char buffer[32];
 	GetArrayString(g_aWeapons, g_iLevel[client], buffer, sizeof(buffer));
 
-	if ((StrEqual(sWeapon, buffer) || StrEqual(sWeapon, "weapon_knife") || StrEqual(sWeapon, "weapon_knife_t")) && IsValidClient(client, true, false))
+	if ((StrEqual(sWeapon, buffer) || StrEqual(sWeapon, "weapon_knife") || StrEqual(sWeapon, "weapon_knife")) && IsValidClient(client, true, false))
 	{
 		return Plugin_Continue;
 	}
