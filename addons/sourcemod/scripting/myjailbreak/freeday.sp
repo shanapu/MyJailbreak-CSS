@@ -700,6 +700,8 @@ void PrepareDay()
 		if (!gc_bdamage.BoolValue && IsValidClient(i))
 		{
 			SetEntProp(i, Prop_Data, "m_takedamage", 0, 1);
+
+			SetEntityMoveType(i, MOVETYPE_NONE);
 		}
 	}
 
