@@ -58,9 +58,6 @@ public void Reminder_OnPluginStart()
 	// Hooks
 	HookEvent("round_start", Reminder_Event_RoundStart);
 	HookEvent("round_end", Reminder_Event_RoundEnd);
-
-	// FindConVar
-	g_bFF = FindConVar("mp_teammates_are_enemies");
 }
 
 /******************************************************************************
