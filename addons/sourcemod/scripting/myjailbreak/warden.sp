@@ -147,7 +147,7 @@ char g_sRestrictedSound[32] = "buttons/button11.wav";
 #include "myjailbreak/modules/Warden/disarm.sp"
 #include "myjailbreak/modules/Warden/noblock.sp"
 #include "myjailbreak/modules/Warden/extendtime.sp"
-#include "myjailbreak/modules/Warden/friendlyfire.sp"
+//#include "myjailbreak/modules/Warden/friendlyfire.sp"
 #include "myjailbreak/modules/Warden/reminder.sp"
 #include "myjailbreak/modules/Warden/randomkill.sp"
 //#include "myjailbreak/modules/Warden/handcuffs.sp"
@@ -232,7 +232,7 @@ public void OnPluginStart()
 	NoBlock_OnPluginStart();
 //	CellDoors_OnPluginStart();
 	ExtendTime_OnPluginStart();
-	FriendlyFire_OnPluginStart();
+//	FriendlyFire_OnPluginStart();
 	Reminder_OnPluginStart();
 	RandomKill_OnPluginStart();
 //	HandCuffs_OnPluginStart();
@@ -327,7 +327,7 @@ public void OnConfigsExecuted()
 	Counter_OnConfigsExecuted();
 	Orders_OnConfigsExecuted();
 	Freedays_OnConfigsExecuted();
-	FriendlyFire_OnConfigsExecuted();
+//	FriendlyFire_OnConfigsExecuted();
 	NoLR_OnConfigsExecuted();
 
 	// Set custom Commands

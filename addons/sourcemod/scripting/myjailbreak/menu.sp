@@ -84,7 +84,6 @@ ConVar gc_bCleanMenu;
 ConVar g_bMath;
 ConVar g_bMathDeputy;
 ConVar g_bCheck;
-ConVar g_bFF;
 ConVar g_bZeus;
 ConVar g_bCowboy;
 ConVar g_bRules;
@@ -580,7 +579,6 @@ public void OnConfigsExecuted()
 	g_bCountdown = FindConVar("sm_warden_countdown");
 	g_bCountdownDeputy = FindConVar("sm_warden_countdown_deputy");
 	g_bVote = FindConVar("sm_warden_vote");
-	g_bFF = FindConVar("mp_teammates_are_enemies");
 	g_bRequest = FindConVar("sm_request_enable");
 	g_bAdminFF = FindConVar("sm_warden_ff");
 	g_bRandom = FindConVar("sm_warden_random");
@@ -955,22 +953,6 @@ public Action Command_OpenMenu(int client, int args)
 						mainmenu.AddItem("check", menuinfo);
 					}
 				}
-				if (g_bAdminFF != null)
-				{
-					if (g_bAdminFF.BoolValue)
-					{
-						if (!g_bFF.BoolValue)
-						{
-							Format(menuinfo, sizeof(menuinfo), "%T", "menu_ffon", client);
-							mainmenu.AddItem("setff", menuinfo);
-						}
-						else
-						{
-							Format(menuinfo, sizeof(menuinfo), "%T", "menu_ffoff", client);
-							mainmenu.AddItem("setff", menuinfo);
-						}
-					}
-				}
 				if (g_bNoBlock != null)
 				{
 					if (g_bNoBlock.BoolValue)
@@ -1116,22 +1098,6 @@ public Action Command_OpenMenu(int client, int args)
 					{
 						Format(menuinfo, sizeof(menuinfo), "%T", "menu_check", client);
 						mainmenu.AddItem("check", menuinfo);
-					}
-				}
-				if (g_bAdminFF != null)
-				{
-					if (g_bAdminFF.BoolValue && g_bAdminFFDeputy.BoolValue)
-					{
-						if (!g_bFF.BoolValue)
-						{
-							Format(menuinfo, sizeof(menuinfo), "%T", "menu_ffon", client);
-							mainmenu.AddItem("setff", menuinfo);
-						}
-						else
-						{
-							Format(menuinfo, sizeof(menuinfo), "%T", "menu_ffoff", client);
-							mainmenu.AddItem("setff", menuinfo);
-						}
 					}
 				}
 				if (g_bNoBlock != null)
