@@ -866,7 +866,7 @@ public Action OnWeaponCanUse(int client, int weapon)
 		char sWeapon[32];
 		GetEdictClassname(weapon, sWeapon, sizeof(sWeapon));
 
-		if ((GetClientTeam(client) == CS_TEAM_T && StrEqual(sWeapon, "weapon_hegrenade")) || (GetClientTeam(client) == CS_TEAM_CT && StrEqual(sWeapon, "weapon_nova")))
+		if ((GetClientTeam(client) == CS_TEAM_T && StrEqual(sWeapon, "weapon_hegrenade")) || (GetClientTeam(client) == CS_TEAM_CT && StrEqual(sWeapon, "weapon_m3")))
 		{
 			if (IsClientInGame(client) && IsPlayerAlive(client))
 			{
@@ -883,25 +883,18 @@ public Action OnWeaponCanUse(int client, int weapon)
 // Only right click attack for chicken
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon) 
 {
-	if (g_bIsDuckHunt && (GetClientTeam(client) == CS_TEAM_T) && IsClientInGame(client) && IsPlayerAlive(client))
+	if (g_bIsDuckHunt && !gc_bFlyMode.BoolValue && (GetClientTeam(client) == CS_TEAM_T) && IsClientInGame(client) && IsPlayerAlive(client))
 	{
-		if (buttons & IN_ATTACK)
+		if (GetEntityMoveType(client) == MOVETYPE_LADDER)
 		{
-			return Plugin_Handled;
+			g_bLadder[client] = true;
 		}
-		if(!gc_bFlyMode.BoolValue)
+		else
 		{
-			if (GetEntityMoveType(client) == MOVETYPE_LADDER)
+			if (g_bLadder[client])
 			{
-				g_bLadder[client] = true;
-			}
-			else
-			{
-				if (g_bLadder[client])
-				{
-					SetEntityGravity(client, 0.3);
-					g_bLadder[client] = false;
-				}
+				SetEntityGravity(client, 0.3);
+				g_bLadder[client] = false;
 			}
 		}
 	}
