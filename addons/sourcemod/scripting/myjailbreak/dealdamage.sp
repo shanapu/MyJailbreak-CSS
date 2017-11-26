@@ -833,7 +833,7 @@ public Action OnTraceAttack(int victim, int &attacker, int &inflictor, float &da
 
 	for (int i = 1; i <= MaxClients; i++) if (IsClientInGame(i))
 	{
-		PrintHintText(i, "<font face='Arial' color='#0055FF'>%t  </font> %i %t \n<font face='Arial' color='#FF0000'>%t  </font> %i %t \n<font face='Arial' color='#00FF00'>%t  </font> %i %t", "dealdamage_ctdealed", g_iDamageBLUE, "dealdamage_hpdamage", "dealdamage_tdealed", g_iDamageRED, "dealdamage_hpdamage", "dealdamage_clientdealed", g_iDamageDealed[i], "dealdamage_hpdamage");
+		PrintCenterText(i, "%t   %i %t \n%t   %i %t \n%t   %i %t", "dealdamage_ctdealed", g_iDamageBLUE, "dealdamage_hpdamage", "dealdamage_tdealed", g_iDamageRED, "dealdamage_hpdamage", "dealdamage_clientdealed", g_iDamageDealed[i], "dealdamage_hpdamage");
 	}
 
 	if (g_iClientTeam[attacker] !=  g_iClientTeam[victim])
@@ -982,7 +982,7 @@ void PrepareDay(bool thisround)
 			if (gc_bColor.BoolValue) SetEntityRenderColor(i, 0, 0, 240, 0);
 			CPrintToChat(i, "%t %t", "dealdamage_tag", "dealdamage_teamblue");
 			CPrintToChatAll("%t %t", "dealdamage_tag", "dealdamage_playerteamblue", i);
-			PrintCenterText(i, "%t \n<font face='Arial' color='#0000FF'>%t</font>", "dealdamage_start_nc", "dealdamage_teamblue_nc");
+			PrintCenterText(i, "%t \n%t", "dealdamage_start_nc", "dealdamage_teamblue_nc");
 			if (gc_bOverlays.BoolValue)ShowOverlay(i, g_sOverlayBluePath, 0.0);
 		}
 		else
@@ -993,7 +993,7 @@ void PrepareDay(bool thisround)
 			if (gc_bColor.BoolValue) SetEntityRenderColor(i, 240, 0, 0, 0);
 			CPrintToChat(i, "%t %t", "dealdamage_tag", "dealdamage_teamred");
 			CPrintToChatAll("%t %t", "dealdamage_tag", "dealdamage_playerteamred", i);
-			PrintCenterText(i, "%t \n<font face='Arial' color='#FF0000'>%t</font>", "dealdamage_start_nc", "dealdamage_teamred_nc");
+			PrintCenterText(i, "%t \n%t", "dealdamage_start_nc", "dealdamage_teamred_nc");
 			if (gc_bOverlays.BoolValue)ShowOverlay(i, g_sOverlayRedPath, 0.0);
 		}
 
@@ -1268,12 +1268,12 @@ public Action Timer_Overlay(Handle timer, int client)
 	{
 		if (g_iClientTeam[i] == TEAM_BLUE)
 		{
-			PrintCenterText(i, "%t \n<font face='Arial' color='#0000FF'>%t</font>", "dealdamage_start_nc", "dealdamage_teamblue_nc");
+			PrintCenterText(i, "%t \n%t", "dealdamage_start_nc", "dealdamage_teamblue_nc");
 			if (gc_bOverlays.BoolValue)ShowOverlay(i, g_sOverlayBluePath, 0.0);
 		}
 		else if (g_iClientTeam[i] == TEAM_RED)
 		{
-			PrintCenterText(i, "%t \n<font face='Arial' color='#FF0000'>%t</font>", "dealdamage_start_nc", "dealdamage_teamred_nc");
+			PrintCenterText(i, "%t \n%t", "dealdamage_start_nc", "dealdamage_teamred_nc");
 			if (gc_bOverlays.BoolValue)ShowOverlay(i, g_sOverlayRedPath, 0.0);
 		}
 	}
