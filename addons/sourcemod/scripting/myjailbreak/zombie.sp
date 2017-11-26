@@ -828,7 +828,7 @@ public void OnAvailableLR(int Announced)
 			}
 			else
 			{
-				GivePlayerItem(i, "weapon_knife_t");
+				GivePlayerItem(i, "weapon_knife");
 			}
 
 			if (g_bTerrorZombies[i])
