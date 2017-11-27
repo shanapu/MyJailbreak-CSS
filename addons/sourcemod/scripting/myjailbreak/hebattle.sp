@@ -756,8 +756,6 @@ public void OnAvailableLR(int Announced)
 				SetCvar("sm_warden_enable", 1);
 			}
 
-//			g_iMPRoundTime.IntValue = g_iOldRoundTime;
-
 			if (gp_bMyJailbreak)
 			{
 				SetCvar("sm_menu_enable", 1);
@@ -775,6 +773,29 @@ public void OnAvailableLR(int Announced)
 public void OnClientPutInServer(int client)
 {
 	SDKHook(client, SDKHook_WeaponCanUse, OnWeaponCanUse);
+	SDKHook(client, SDKHook_OnTakeDamageAlive, OnTakeDamage);
+}
+
+
+public Action OnTakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype, int &weapon, float damageForce[3], float damagePosition[3], int damagecustom)
+{
+	if (g_bIsHEbattle)
+	{
+		char sWeapon[32];
+		GetEdictClassname(weapon, sWeapon, sizeof(sWeapon));
+
+		if (StrEqual(sWeapon, "weapon_hegrenade"))
+		{
+			if (IsClientInGame(attacker) && IsPlayerAlive(attacker))
+			{
+				return Plugin_Continue;
+			}
+		}
+
+		return Plugin_Handled;
+	}
+
+	return Plugin_Continue;
 }
 
 // HE Grenade only
@@ -785,7 +806,7 @@ public Action OnWeaponCanUse(int client, int weapon)
 		char sWeapon[32];
 		GetEdictClassname(weapon, sWeapon, sizeof(sWeapon));
 
-		if (StrEqual(sWeapon, "weapon_hegrenade"))
+		if (StrEqual(sWeapon, "weapon_hegrenade") || StrEqual(sWeapon, "weapon_knife"))
 		{
 			if (IsClientInGame(client) && IsPlayerAlive(client))
 			{
@@ -891,7 +912,10 @@ void PrepareDay(bool thisround)
 
 		StripAllPlayerWeapons(i);
 
+		GivePlayerItem(i, "weapon_knife");
 		GivePlayerItem(i, "weapon_hegrenade");
+
+		SetEntityMoveType(i, MOVETYPE_WALK);
 
 		SetEntityHealth(i, gc_iPlayerHP.IntValue);
 
@@ -1028,7 +1052,7 @@ public Action Timer_StartEvent(Handle timer)
 
 			if (gc_bGrav.BoolValue)
 			{
-				SetEntityGravity(i, gc_fGravValue.FloatValue);	
+				SetEntityGravity(i, gc_fGravValue.FloatValue);
 			}
 		}
 
